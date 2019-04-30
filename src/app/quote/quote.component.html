@@ -1,0 +1,25 @@
+<div class="container" id="thee">
+    <div class="row">
+        <div class="col-6">
+            <p>WELCOME TO AWESOME QUOTES</p>
+            <h3>Be Motivated with your quotes</h3>
+            <h2>Enter your quotes</h2>
+            <app-quote-form (emitQuote)="addQuote($event)"></app-quote-form>
+        </div>
+            <div class="col-6" id="one">
+                <div *ngFor="let quote of quotes; let i=index">
+                    <p>
+                        {{quote.description}}
+                    </p>
+                    <p>
+                        {{quote.name}}
+                    </p>
+                    <p>
+                        {{quote.submitter}}
+                    </p>
+
+                    <button class="btn btn-success" (click)="delQuote(i)"> DELETE</button>
+                </div>
+            </div>
+        </div>
+    </div>
